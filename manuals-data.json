@@ -1,0 +1,155 @@
+{
+  "badges": [
+    {
+      "label": "All Manuals",
+      "filter": "all",
+      "active": true
+    },
+    {
+      "label": "Door Brochures",
+      "filter": "door-brochures",
+      "active": false
+    },
+    {
+      "label": "Color & Accessories",
+      "filter": "color-accessories",
+      "active": false
+    },
+    {
+      "label": "Smart Phone Kit",
+      "filter": "smart-phone",
+      "active": false
+    },
+    {
+      "label": "Framing Requirements",
+      "filter": "framing",
+      "active": false
+    },
+    {
+      "label": "Opener Manuals",
+      "filter": "opener",
+      "active": false
+    }
+  ],
+  "cards": [
+    {
+      "title": "Sectional Doors",
+      "image": "sectional-doors.png",
+      "categories": ["all", "manual"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Roller Doors",
+      "image": "domestic-and-industrial-roller-doors.png",
+      "categories": ["all", "manual"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Garage Openers",
+      "image": "garage-openers.png",
+      "categories": ["all", "manual"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Color Collection",
+      "image": "color-collection.png",
+      "categories": ["all", "door-brochures"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Auto Lock",
+      "image": "auto-lock.png",
+      "categories": ["all", "door-brochures"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Smart Phone Control Kit",
+      "image": "smart-phone-control-kit.png",
+      "categories": ["all", "color-accessories"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Smart Phone Quick Set-up Guide",
+      "image": "smart-phone-control-kit-and-app.png",
+      "categories": ["all", "color-accessories"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Smart Phone App FAQs",
+      "image": "dominaot-phone-app-faq.png",
+      "categories": ["all", "smart-phone"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Sectional Doors",
+      "image": "sectional-door-framing.png",
+      "categories": ["all", "framing"],
+      "url": "#",
+      "description": "Up to 2450mm"
+    },
+    {
+      "title": "Sectional Doors",
+      "image": "framing-instructions.png",
+      "categories": ["all", "opener"],
+      "url": "#",
+      "description": "5 Panels"
+    },
+    {
+      "title": "Roller Doors",
+      "image": "roller-doors-series-a.png",
+      "categories": ["all", "opener"],
+      "url": "#",
+      "description": "Series A"
+    },
+    {
+      "title": "Roller Doors",
+      "image": "roll-er-doors-series-b.png",
+      "categories": ["all", "opener"],
+      "url": "#",
+      "description": "Series B + C"
+    },
+    {
+      "title": "Select DSO-1 Sectional Opener",
+      "image": "sectional-door-opener.png",
+      "categories": ["all", "opener"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Secure DSO-2+3 Sectional Opener",
+      "image": "smart-and-secure.png",
+      "categories": ["all", "opener"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Smart DSO- 2+3 Quick Operation Guide",
+      "image": "smart-dso.png",
+      "categories": ["all", "opener"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "GDO-12v1 Industrial Door Opener",
+      "image": "gdo-industrial.png",
+      "categories": ["all", "opener"],
+      "url": "#",
+      "description": null
+    },
+    {
+      "title": "Excel",
+      "image": "excel.png",
+      "categories": ["all", "opener"],
+      "url": "#",
+      "description": null
+    }
+  ]
+}
