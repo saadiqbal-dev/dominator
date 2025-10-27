@@ -20,6 +20,7 @@
 @media (min-width: 1600px) {
   .main-container {
     padding: 100px 240px;
+    padding-bottom: 0;
   }
 }
 
