@@ -38,10 +38,14 @@ $(document).ready(function () {
   function createCard(data) {
     const categoryString = data.categories.join(" ");
 
+    const $col = $("<div>", {
+      class: "col-auto",
+      "data-category": categoryString,
+    });
+
     const $card = $("<a>", {
       href: data.url,
       class: "document-card",
-      "data-category": categoryString,
     });
 
     const $cardImage = $("<div>", {
@@ -72,16 +76,17 @@ $(document).ready(function () {
       $card.append($description);
     }
 
-    return $card;
+    $col.append($card);
+    return $col;
   }
 
   function renderCards(cards) {
     $grid.empty();
     cards.forEach((cardData) => {
-      const $card = createCard(cardData);
-      $grid.append($card);
+      const $col = createCard(cardData);
+      $grid.append($col);
     });
-    allCards = $(".document-card");
+    allCards = $grid.find(".col-auto");
   }
 
   function applyFilter(filter) {
@@ -91,14 +96,14 @@ $(document).ready(function () {
     let visibleCount = 0;
 
     allCards.each(function () {
-      const $card = $(this);
-      const categories = $card.data("category").toString().split(" ");
+      const $col = $(this);
+      const categories = $col.data("category").toString().split(" ");
 
       if (filter === "all" || categories.includes(filter)) {
-        $card.show();
+        $col.show();
         visibleCount++;
       } else {
-        $card.hide();
+        $col.hide();
       }
     });
 
