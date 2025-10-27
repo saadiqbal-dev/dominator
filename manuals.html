@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Gallery</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="content-wrapper">
+        <!-- Filter Badges -->
+        <div class="badge-container">
+          <div class="filter-badge active" data-filter="all">
+            <p>All Manuals</p>
+          </div>
+          <div class="filter-badge" data-filter="door-brochures">
+            <p>Door Brochures</p>
+          </div>
+          <div class="filter-badge" data-filter="color-accessories">
+            <p>Color & Accessories</p>
+          </div>
+          <div class="filter-badge" data-filter="smart-phone">
+            <p>Smart Phone Kit</p>
+          </div>
+          <div class="filter-badge" data-filter="framing">
+            <p>Framing Requirements</p>
+          </div>
+          <div class="filter-badge" data-filter="opener">
+            <p>Opener Manuals</p>
+          </div>
+        </div>
+
+        <!-- Grid Container -->
+        <div class="grid-container" id="documentGrid">
+          <!-- All Manuals -->
+          <a href="#" class="document-card" data-category="all manual">
+            <div class="card-image">
+              <img
+                src="assets/img/sectional-doors.png"
+                alt="Sectional Doors"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Sectional Doors</h3>
+          </a>
+
+          <a href="#" class="document-card" data-category="all manual">
+            <div class="card-image">
+              <img
+                src="assets/img/domestic-and-industrial-roller-doors.png"
+                alt="User Manual"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Roller Doors</h3>
+          </a>
+
+          <a href="#" class="document-card" data-category="all manual">
+            <div class="card-image">
+              <img
+                src="assets/img/garage-openers.png"
+                alt="Maintenance Guide"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Garage Openers</h3>
+          </a>
+
+          <!-- Door Brochures -->
+          <a href="#" class="document-card" data-category="all door-brochures">
+            <div class="card-image">
+              <img
+                src="assets/img/color-collection.png"
+                alt="Classic Door Series"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Color Collection</h3>
+          </a>
+
+          <a href="#" class="document-card" data-category="all door-brochures">
+            <div class="card-image">
+              <img
+                src="assets/img/auto-lock.png"
+                alt="Modern Door Collection"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Auto Lock</h3>
+          </a>
+
+          <!-- Color & Accessories -->
+          <a href="#" class="document-card" data-category="all color-accessories">
+            <div class="card-image">
+              <img
+                src="assets/img/smart-phone-control-kit.png"
+                alt="Color Options Guide"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Smart Phone Control Kit</h3>
+          </a>
+
+          <a href="#" class="document-card" data-category="all color-accessories">
+            <div class="card-image">
+              <img
+                src="assets/img/smart-phone-control-kit-and-app.png"
+                alt="Hardware Accessories"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Smart Phone Quick Set-up Guide</h3>
+          </a>
+
+          <!-- Smart Phone Kit -->
+          <a href="#" class="document-card" data-category="all smart-phone">
+            <div class="card-image">
+              <img
+                src="assets/img/dominaot-phone-app-faq.png"
+                alt="Smart Control Setup"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Smart Phone App FAQs</h3>
+          </a>
+
+          <!-- Framing Requirements -->
+          <a href="#" class="document-card" data-category="all framing">
+            <div class="card-image">
+              <img
+                src="assets/img/sectional-door-framing.png"
+                alt="Framing Specifications"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Sectional Doors</h3>
+            <p class="card-body-text">Up to 2450mm</p>
+          </a>
+          <a href="#" class="document-card" data-category="all opener">
+            <div class="card-image">
+              <img
+                src="assets/img/framing-instructions.png"
+                alt="Opener Installation"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Sectional Doors</h3>
+            <p class="card-body-text">5 Panels</p>
+          </a>
+
+          <!-- Opener Manuals -->
+          <a href="#" class="document-card" data-category="all opener">
+            <div class="card-image">
+              <img
+                src="assets/img/roller-doors-series-a.png"
+                alt="Opener Installation"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Roller Doors</h3>
+            <p class="card-body-text">Series A</p>
+          </a>
+          <a href="#" class="document-card" data-category="all opener">
+            <div class="card-image">
+              <img
+                src="assets/img/roll-er-doors-series-b.png"
+                alt="Opener Installation"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Roller Doors</h3>
+            <p class="card-body-text">Series B + C</p>
+          </a>
+          <a href="#" class="document-card" data-category="all opener">
+            <div class="card-image">
+              <img
+                src="assets/img/sectional-door-opener.png"
+                alt="Opener Installation"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Select DSO-1 Sectional Opener</h3>
+          </a>
+          <a href="#" class="document-card" data-category="all opener">
+            <div class="card-image">
+              <img
+                src="assets/img/smart-and-secure.png"
+                alt="Opener Installation"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Secure DSO-2+3 Sectional Opener</h3>
+          </a>
+          <a href="#" class="document-card" data-category="all opener">
+            <div class="card-image">
+              <img
+                src="assets/img/smart-dso.png"
+                alt="Opener Installation"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Smart DSO- 2+3 Quick Operation Guide</h3>
+          </a>
+          <a href="#" class="document-card" data-category="all opener">
+            <div class="card-image">
+              <img
+                src="assets/img/gdo-industrial.png"
+                alt="Opener Installation"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">GDO-12v1 Industrial Door Opener</h3>
+          </a>
+          <a href="#" class="document-card" data-category="all opener">
+            <div class="card-image">
+              <img
+                src="assets/img/excel.png"
+                alt="Opener Installation"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="card-title">Excel</h3>
+          </a>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loading-spinner">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2">Loading documents...</p>
+        </div>
+
+        <!-- No Results Message -->
+        <div class="no-results">
+          <p>No documents found for the selected category.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

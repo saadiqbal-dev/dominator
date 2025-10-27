@@ -1,0 +1,313 @@
+/* Font Face - You'll need to include your Karu-Regular font */
+@font-face {
+  font-family: "Karu-Regular";
+  src: url("path-to-your-font/Karu-Regular.woff2") format("woff2"),
+    url("path-to-your-font/Karu-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Fallback if Karu font is not available */
+body {
+  font-family: "Karu-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Main Container */
+.main-container {
+  padding: 100px 240px;
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* Main Wrapper */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 85px;
+}
+
+/* Badge Container */
+.badge-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Badge Styles */
+.filter-badge {
+  width: 191px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 1.5px solid #000;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+  background: #fff;
+}
+
+.filter-badge:hover {
+  opacity: 0.8;
+}
+
+.filter-badge.active {
+  opacity: 1;
+}
+
+.filter-badge p {
+  color: #000;
+  text-align: center;
+  font-family: "Karu-Regular", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 42px;
+  row-gap: 50px;
+  width: 100%;
+}
+
+/* Card Styles */
+.document-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.card-image {
+  width: 328px;
+  height: 465px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 23px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px 2px rgba(0, 0, 0, 0.25);
+}
+
+.card-title {
+  color: #000;
+  font-family: "Karu-Regular", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.card-body-text {
+  color: #908d8d;
+  font-family: "Karu-Regular", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  margin-top: 8px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: none;
+  text-align: center;
+  padding: 40px;
+}
+
+.loading-spinner.active {
+  display: block;
+}
+
+.loading-spinner p {
+  color: #908d8d;
+  font-family: "Karu-Regular", sans-serif;
+  font-size: 18px;
+  margin-top: 16px;
+}
+
+/* No Results Message */
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+  color: #908d8d;
+  font-size: 18px;
+  font-family: "Karu-Regular", sans-serif;
+}
+
+.no-results.active {
+  display: block;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.document-card {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+.document-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.document-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.document-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.document-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.document-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.document-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+.document-card:nth-child(7) {
+  animation-delay: 0.4s;
+}
+.document-card:nth-child(8) {
+  animation-delay: 0.45s;
+}
+.document-card:nth-child(9) {
+  animation-delay: 0.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .main-container {
+    padding: 80px 120px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .main-container {
+    padding: 60px 80px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .main-container {
+    padding: 40px 40px;
+  }
+
+  .content-wrapper {
+    gap: 50px;
+  }
+
+  .badge-container {
+    gap: 16px;
+  }
+
+  .filter-badge {
+    width: 160px;
+    height: 40px;
+  }
+
+  .filter-badge p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 30px 20px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card-image {
+    width: 100%;
+    max-width: 328px;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-badge {
+    width: 140px;
+    height: 36px;
+  }
+
+  .filter-badge p {
+    font-size: 14px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-body-text {
+    font-size: 16px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
