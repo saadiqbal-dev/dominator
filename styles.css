@@ -17,6 +17,12 @@
   background: #fff;
 }
 
+@media (min-width: 1600px) {
+  .main-container {
+    padding: 100px 240px;
+  }
+}
+
 .main-container,
 .main-container * {
   box-sizing: border-box;
@@ -115,6 +121,12 @@
   width: 100vw;
   background: #ed1c24;
   padding: 100px clamp(20px, 5vw, 240px);
+}
+
+@media (min-width: 1600px) {
+  .cta-section {
+    padding: 100px 240px;
+  }
 }
 
 .cta-section h2 {
