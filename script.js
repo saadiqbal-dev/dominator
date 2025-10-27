@@ -28,6 +28,9 @@ $(document).ready(function () {
 
   function renderBadges(badges) {
     $badgeContainer.empty();
+    if (!badges || !Array.isArray(badges) || badges.length === 0) {
+      return;
+    }
     badges.forEach((badgeData) => {
       const $badge = createBadge(badgeData);
       $badgeContainer.append($badge);
@@ -36,7 +39,9 @@ $(document).ready(function () {
   }
 
   function createCard(data) {
-    const categoryString = data.categories.join(" ");
+    const categoryString = data.categories && Array.isArray(data.categories)
+      ? data.categories.join(" ")
+      : "all";
 
     const $col = $("<div>", {
       class: "col-auto",
@@ -44,7 +49,7 @@ $(document).ready(function () {
     });
 
     const $card = $("<a>", {
-      href: data.url,
+      href: data.url || "#",
       class: "document-card",
     });
 
@@ -53,8 +58,8 @@ $(document).ready(function () {
     });
 
     const $img = $("<img>", {
-      src: config.assetsPath + data.image,
-      alt: data.title,
+      src: data.image ? config.assetsPath + data.image : "",
+      alt: data.title || "Manual",
       loading: "lazy",
     });
 
@@ -63,7 +68,7 @@ $(document).ready(function () {
 
     const $title = $("<h3>", {
       class: "card-title",
-      text: data.title,
+      text: data.title || "Untitled",
     });
 
     $card.append($title);
@@ -82,6 +87,10 @@ $(document).ready(function () {
 
   function renderCards(cards) {
     $grid.empty();
+    if (!cards || !Array.isArray(cards) || cards.length === 0) {
+      $noResults.addClass("active");
+      return;
+    }
     cards.forEach((cardData) => {
       const $col = createCard(cardData);
       $grid.append($col);
@@ -90,22 +99,26 @@ $(document).ready(function () {
   }
 
   function applyFilter(filter) {
-    $badges.removeClass("active");
-    $badges.filter(`[data-filter="${filter}"]`).addClass("active");
+    if ($badges && $badges.length > 0) {
+      $badges.removeClass("active");
+      $badges.filter(`[data-filter="${filter}"]`).addClass("active");
+    }
 
     let visibleCount = 0;
 
-    allCards.each(function () {
-      const $col = $(this);
-      const categories = $col.data("category").toString().split(" ");
+    if (allCards && allCards.length > 0) {
+      allCards.each(function () {
+        const $col = $(this);
+        const categories = $col.data("category").toString().split(" ");
 
-      if (filter === "all" || categories.includes(filter)) {
-        $col.show();
-        visibleCount++;
-      } else {
-        $col.hide();
-      }
-    });
+        if (filter === "all" || categories.includes(filter)) {
+          $col.show();
+          visibleCount++;
+        } else {
+          $col.hide();
+        }
+      });
+    }
 
     $noResults.toggle(visibleCount === 0);
   }
@@ -118,6 +131,11 @@ $(document).ready(function () {
       method: "GET",
       dataType: "json",
       success: function (response) {
+        if (!response) {
+          $loading.removeClass("active");
+          $noResults.addClass("active");
+          return;
+        }
         renderBadges(response.badges);
         renderCards(response.cards);
         applyFilter("all");
