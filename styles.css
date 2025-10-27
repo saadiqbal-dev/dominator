@@ -114,7 +114,7 @@
 .cta-section {
   width: 100vw;
   background: #ed1c24;
-  padding: 100px clamp(20px, 12vw, 240px);
+  padding: 100px clamp(20px, 5vw, 240px);
 }
 
 .cta-section h2 {
