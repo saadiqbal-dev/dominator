@@ -72,7 +72,12 @@
 
 @media (hover: hover) {
   .filter-badge:hover {
-    opacity: 0.8;
+    opacity: 1;
+    border-color: #ed1c24;
+  }
+
+  .filter-badge:hover p {
+    color: #ed1c24;
   }
 }
 
@@ -82,6 +87,11 @@
 
 .filter-badge.active {
   opacity: 1;
+  border-color: #ed1c24;
+}
+
+.filter-badge.active p {
+  color: #ed1c24;
 }
 
 .filter-badge p {
