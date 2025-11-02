@@ -1,9 +1,4 @@
 $(document).ready(function () {
-  const config = {
-    dataSource: "manuals-data.json",
-    assetsPath: "assets/img/",
-  };
-
   const $badgeContainer = $(".badge-container");
   const $grid = $("#documentGrid");
   const $noResults = $(".no-results");
@@ -11,92 +6,6 @@ $(document).ready(function () {
 
   let allCards = [];
   let $badges = null;
-
-  function createBadge(data) {
-    const $badge = $("<div>", {
-      class: data.active ? "filter-badge active" : "filter-badge",
-      "data-filter": data.filter,
-    });
-
-    const $label = $("<p>", {
-      text: data.label,
-    });
-
-    $badge.append($label);
-    return $badge;
-  }
-
-  function renderBadges(badges) {
-    $badgeContainer.empty();
-    if (!badges || !Array.isArray(badges) || badges.length === 0) {
-      return;
-    }
-    badges.forEach((badgeData) => {
-      const $badge = createBadge(badgeData);
-      $badgeContainer.append($badge);
-    });
-    $badges = $(".filter-badge");
-  }
-
-  function createCard(data) {
-    const categoryString = data.categories && Array.isArray(data.categories)
-      ? data.categories.join(" ")
-      : "all";
-
-    const $col = $("<div>", {
-      class: "col-auto",
-      "data-category": categoryString,
-    });
-
-    const $card = $("<a>", {
-      href: data.url || "#",
-      class: "document-card",
-    });
-
-    const $cardImage = $("<div>", {
-      class: "card-image",
-    });
-
-    const $img = $("<img>", {
-      src: data.image ? config.assetsPath + data.image : "",
-      alt: data.title || "Manual",
-      loading: "lazy",
-    });
-
-    $cardImage.append($img);
-    $card.append($cardImage);
-
-    const $title = $("<h3>", {
-      class: "card-title",
-      text: data.title || "Untitled",
-    });
-
-    $card.append($title);
-
-    if (data.description) {
-      const $description = $("<p>", {
-        class: "card-body-text",
-        text: data.description,
-      });
-      $card.append($description);
-    }
-
-    $col.append($card);
-    return $col;
-  }
-
-  function renderCards(cards) {
-    $grid.empty();
-    if (!cards || !Array.isArray(cards) || cards.length === 0) {
-      $noResults.addClass("active");
-      return;
-    }
-    cards.forEach((cardData) => {
-      const $col = createCard(cardData);
-      $grid.append($col);
-    });
-    allCards = $grid.find(".col-auto");
-  }
 
   function applyFilter(filter) {
     if ($badges && $badges.length > 0) {
@@ -123,30 +32,15 @@ $(document).ready(function () {
     $noResults.toggle(visibleCount === 0);
   }
 
-  function loadData() {
-    $loading.addClass("active");
+  function init() {
+    $badges = $(".filter-badge");
+    allCards = $grid.find(".col-auto");
 
-    $.ajax({
-      url: config.dataSource,
-      method: "GET",
-      dataType: "json",
-      success: function (response) {
-        if (!response) {
-          $loading.removeClass("active");
-          $noResults.addClass("active");
-          return;
-        }
-        renderBadges(response.badges);
-        renderCards(response.cards);
-        applyFilter("all");
-        $loading.removeClass("active");
-      },
-      error: function (error) {
-        console.error("Error loading data:", error);
-        $loading.removeClass("active");
-        $noResults.addClass("active");
-      },
-    });
+    // Hide loading spinner
+    $loading.hide();
+
+    // Apply default filter
+    applyFilter("all");
   }
 
   $badgeContainer.on("click", ".filter-badge", function () {
@@ -154,5 +48,5 @@ $(document).ready(function () {
     applyFilter(filter);
   });
 
-  loadData();
+  init();
 });
